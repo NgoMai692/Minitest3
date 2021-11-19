@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2</title>
+</head>
+<body>
+<script>
+    let arrNum = +prompt("Nhập vào số lượng phần tử: ");
+    let arr = new Array(arrNum);
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = prompt("Nhập phần tử thứ "+ (i+1) +" là: ");
+    }
+    let checkText = prompt("Nhập giá trị bất kì a: ");
+
+    if (!isNaN(checkText)){
+        checkTextType ="number"
+    }else {
+        checkTextType ="string"
+    }
+
+    let count = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (checkText===arr[i]){
+            count++;
+        }
+    }
+
+    if(count===0){
+        alert("Không tìm thấy giá trị "+ checkText+" trong mảng" );
+    }else{
+        alert("Số lượng giá trị "+ checkText+ " trong mảng là: "+count + "Kiểu dữ liệu của a là: "+ checkTextType);
+    }
+
+</script>
+</body>
+</html>

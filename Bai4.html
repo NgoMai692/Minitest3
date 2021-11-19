@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4</title>
+</head>
+<body>
+<div id="display"></div>
+<script>
+    let arrNum = +prompt("Nhập vào số lượng phần tử: ");
+    let array = new Array(arrNum);
+
+    for (let i = 0; i < array.length; i++) {
+        array[i] = +prompt("Nhập phần tử thứ "+ (i+1) +" là: ");
+    }
+
+    if(findMax(findCountDiv35(array))===0){
+        document.getElementById("display").innerHTML= ("<h1>C1021H1</h1>");
+    }
+    if(findMax(findCountDiv35(array))===1){
+        document.getElementById("display").innerHTML= ("<p><i>Helloworld</i></p>");
+    }
+    if(findMax(findCountDiv35(array))===2){
+        document.getElementById("display").innerHTML= ("<p><b>CodeGym</b></p>");
+    }
+
+
+    function findCountDiv35(arr){
+        let countDiv3 = 0;
+        let countDiv5 = 0;
+        let countNoDiv35 = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if(arr[i]%3===0){
+                countDiv3++;
+                if(arr[i]%5===0) {
+                    countDiv5++;
+                }
+            }else if(arr[i]%5===0){
+                countDiv5++;
+            }else {
+                countNoDiv35++
+            }
+        }
+        return [countDiv3,countDiv5,countNoDiv35]
+    }
+
+
+    function findMax(arr){
+        let max= arr[0];
+        let index;
+        for (let i = 1; i < arr.length; i++) {
+            if (arr[i]>max){
+                max = arr[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+
+
+</script>
+</body>
+</html>

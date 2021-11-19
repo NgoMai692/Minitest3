@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+<script>
+    let arrNum = +prompt("NHập vào số lượng phần tử: ");
+    let arr = new Array(arrNum);
+
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = +prompt("Nhập phần tử thứ "+ (i+1) +" là: ");
+    }
+
+    let count=0;
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] %3 ===0){
+            count++;
+        }
+    }
+    if (count===0){
+        alert(-1);
+    }else {
+        alert("Số lượng phần tử chia hết cho 3 là: "+count);
+    }
+</script>
+
+</body>
+</html>
